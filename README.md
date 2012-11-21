@@ -46,10 +46,11 @@ the function 'function' sends the length for the list given in the request.
 making swap
 =====
 
-now edit the module 'dummy_module' and check comment the line {ok, length(Arg)} and uncomment
-the line {ok, Arg}, to retrieve the list instead length of the list
+open another terminal and :
+now edit the module 'dummy_module' and comment the line '{ok, length(Arg)}' and uncomment
+the line '{ok, Arg}', to retrieve the list value instead length of the list
 
-in another terminal re-compile:
+re-compile:
 
 		$ make compile
 
