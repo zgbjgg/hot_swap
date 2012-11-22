@@ -1,4 +1,5 @@
 %% hot code loading example
+%% Author:  Jorge Garrido [zgb]
 -module(code_loading).
 
 -export([start/0, server/1]).

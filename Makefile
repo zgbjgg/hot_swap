@@ -1,3 +1,5 @@
+# Makefile 
+# Author:  Jorge Garrido [zgb]
 
 PIPES=pipes
 LOGS=log
@@ -21,5 +23,10 @@ start:
 	@mkdir -p $(LOGS)
 	run_erl -daemon $(PIPES)/ $(LOGS)/ "exec erl -sname $(SNAME) -setcookie $(COOKIE) -pa ebin/ -eval 'code_loading:start().'"
 
-swap:
+swap: check_module
 	@erl -sname swap -setcookie $(COOKIE) -noshell -eval 'rpc:call('$(SNAME)@$(HOSTNAME)', c, l, [$(MODULE)]), io:format("swap completed!!~n").' -s init stop
+
+check_module:
+ifndef module
+	$(error MODULE is undefined)
+endif

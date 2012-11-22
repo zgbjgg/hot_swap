@@ -1,4 +1,5 @@
-%% dummy module
+%% dummy module 
+%% Author:  Jorge Garrido [zgb]
 -module(dummy_module).
 
 -export([function/1]).
