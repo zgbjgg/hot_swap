@@ -27,6 +27,6 @@ swap: check_module
 	@erl -sname swap -setcookie $(COOKIE) -noshell -eval 'rpc:call('\''$(SNAME)@$(HOSTNAME)'\'', c, l, [$(MODULE)]), io:format("swap completed!!~n").' -s init stop
 
 check_module:
-ifndef module
+ifndef MODULE
 	$(error MODULE is undefined)
 endif
